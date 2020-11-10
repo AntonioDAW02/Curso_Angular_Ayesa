@@ -1,0 +1,20 @@
+h1 {
+    color: blue;
+}
+
+h2 {
+    font-style: italic;
+}
+
+h4 {
+    text-decoration: underline;
+}
+
+article {
+    background-color: lightgrey;
+}
+
+footer {
+    color: white;
+    background-color: gray;
+}
