@@ -1,0 +1,26 @@
+<mat-card class="mat-elevation-z2" [class.mat-elevation-z20]="restaurant == restaurantHovered"
+[class.border]="restaurant.id == selectedId"
+  (mouseover)="MouseOver(restaurant)" (mouseout)="MouseOver(null)">
+  <mat-card-header>
+    <mat-card-title>{{restaurant.name | uppercase}}</mat-card-title>
+  </mat-card-header>
+  <img mat-card-image src="{{restaurant.photograph}}" alt="restaurant {{restaurant.name}} image">
+  <mat-card-content>
+    <p>{{restaurant.neighborhood | neightborhoodCode}}</p>
+    <p>{{restaurant.address}}</p>
+    <section *ngIf="GetRestaurantNumberOfReviews(restaurant)>0; else noReviews">
+      This restaurant has {{GetRestaurantNumberOfReviews(restaurant)}} reviews
+    </section>
+  </mat-card-content>
+  <mat-card-actions>
+    <button routerLink="{{restaurant.id}}"
+        mat-raised-button color="primary"
+        *ngIf="showDetailsButton">DETAILS</button>
+    <button mat-button color="primary">LIKE</button>
+    <button mat-button color="accent">SHARE</button>
+  </mat-card-actions>
+</mat-card>
+
+<ng-template #noReviews>
+  No reviews yet!
+</ng-template>

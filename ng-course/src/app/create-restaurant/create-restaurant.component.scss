@@ -1,0 +1,15 @@
+.form-subtitle {
+  font-size: 20px;
+  font-style: italic;
+  margin-bottom: 10px;
+}
+
+form.ng-invalid:not(.ng-untouched){
+  border-left: #be514f solid;
+  padding-left: 10px;
+}
+
+form.ng-valid {
+  border-left: green solid;
+  padding-left: 10px;
+}

@@ -1,0 +1,14 @@
+<h2 style="width: 100%; text-align: center;">{{restaurant.name}}</h2>
+<div fxLayout="row" fxLayoutAlign="space-around strech">
+  <app-restaurant fxFlex="40" [showDetailsButton]="false" [restaurant]="restaurant"></app-restaurant>
+  <app-map fxFlex="40" [restaurants]="mapRestaurants"></app-map>
+</div>
+<button style="margin-top: 1rem; margin-left:3rem;"
+  mat-raised-button
+  color="accent"
+  (click)="goBack()">Go back</button>
+
+  <button style="margin-top: 1rem; margin-left:1rem;"
+  mat-raised-button
+  color="primary"
+  (click)="goNext()">Go next</button>

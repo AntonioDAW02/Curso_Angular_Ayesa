@@ -1,0 +1,38 @@
+@import '~@angular/material/theming';
+
+$my-typography: mat-typography-config(
+  $font-family: 'Montserrat Alternates, Roboto, monospace',
+  $headline: mat-typography-level(32px, 48px, 700),
+  $body-1: mat-typography-level(18px, 26px, 500)
+);
+
+@include mat-core($my-typography);
+
+$my-theme-primary: mat-palette($mat-cyan, 700);
+$my-theme-accent: mat-palette($mat-blue-grey, 200);
+
+$my-theme-warn: mat-palette($mat-red, 700);
+
+$my-theme: mat-dark-theme((
+  color: (
+    primary: $my-theme-primary,
+    accent: $my-theme-accent,
+    warn: $my-theme-warn
+  )
+));
+
+$candy-app-primary: mat-palette($mat-indigo);
+$candy-app-acent: mat-palette($mat-pink, A200, A100, A400);
+
+$candy-theme: mat-light-theme((
+  color: (
+    primary: $candy-app-primary,
+    accent: $candy-app-acent
+  )
+));
+
+@include angular-material-theme($candy-theme);
+
+.dark-theme {
+  @include angular-material-theme($my-theme);
+}

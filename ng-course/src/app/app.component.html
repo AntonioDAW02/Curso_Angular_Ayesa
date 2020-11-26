@@ -1,0 +1,14 @@
+<mat-toolbar color="primary">
+  <span>Restaurant Advisor</span>
+  <span class="make-space"></span>
+  <div>
+    <a routerLink="restaurants" routerLinkActive="link-active" [routerLinkActiveOptions]="{exact:true}" mat-button>Restaurants</a>
+    <a routerLink="restaurants/new" routerLinkActive="link-active" mat-button>New restaurant</a>
+    <a routerLink="about" routerLinkActive="link-active" mat-button>About</a>
+    <button mat-button (click)="changeTheme()"><mat-icon>brightness_medium</mat-icon></button>
+  </div>
+</mat-toolbar>
+<!--<app-header></app-header>-->
+<div class="container">
+  <router-outlet></router-outlet>
+</div>

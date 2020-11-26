@@ -1,0 +1,11 @@
+<agm-map class="map-styles" [latitude]="lat" [longitude]="lng" [fitBounds]="bounds">
+  <agm-marker *ngFor="let restaurant of restaurants"
+    [latitude]="restaurant.latlng.lat"
+    [longitude]="restaurant.latlng.lng"
+    (markerClick)="clickMarker(restaurant.id)">
+
+    <agm-info-window>
+      <strong style="color: black;">{{ restaurant.name }}</strong>
+    </agm-info-window>
+  </agm-marker>
+</agm-map>

@@ -1,0 +1,101 @@
+<h1>Add restaurant</h1>
+<form [formGroup]="createRestaurantForm">
+  <div fxLayout="column">
+
+    <mat-form-field appearance="fill">
+      <mat-label>Name</mat-label>
+      <input  formControlName="name" type="text" matInput placeholder="Enter name">
+      <mat-error *ngIf="createRestaurantForm.get('name').hasError('minlength')">Length must be greater than 4</mat-error>
+    </mat-form-field>
+
+
+    <mat-form-field appearance="fill">
+      <mat-label>Address</mat-label>
+      <input formControlName="address" type="text" matInput placeholder="Enter address">
+    </mat-form-field>
+
+
+    <mat-form-field appearance="fill">
+      <mat-label>Neighborhood</mat-label>
+      <input formControlName="neighborhood" type="text" matInput placeholder="Enter neighborhood">
+    </mat-form-field>
+
+
+    <mat-form-field appearance="fill">
+      <mat-label>Photograph</mat-label>
+      <input formControlName="photograph" type="text" matInput placeholder="Enter photograph">
+    </mat-form-field>
+
+
+    <mat-form-field appearance="fill">
+      <mat-label>Cuisine Type</mat-label>
+      <input formControlName="cuisine_type" type="text" matInput placeholder="Enter cuisine type">
+    </mat-form-field>
+
+    <div formGroupName="latlng" fxLayout="row" fxLayout.lt-sm="column" fxLayoutAlign="space-between">
+
+      <mat-form-field appearance="fill" fxFlex="48">
+        <mat-label>Latitude</mat-label>
+        <input formControlName="lat" type="number" step="0.000001" matInput placeholder="Enter latitude">
+      </mat-form-field>
+
+
+      <mat-form-field appearance="fill" fxFlex="48">
+        <mat-label>Longitude</mat-label>
+        <input formControlName="lng" type="number" step="0.000001" matInput placeholder="Enter longitude">
+      </mat-form-field>
+
+    </div>
+
+    <div class="form-subtitle">Operating hours</div>
+
+    <div formGroupName="operating_hours" fxLayout="row wrap" fxLayout.lt-sm="column" fxLayoutAlign="space-between">
+
+      <mat-form-field appearance="fill" fxFlex="30" fxFlex.sm="49">
+        <mat-label>Monday</mat-label>
+        <input formControlName="Monday" type="text" matInput placeholder="Enter Operation hours">
+      </mat-form-field>
+
+      <mat-form-field appearance="fill" fxFlex="30" fxFlex.sm="49">
+        <mat-label>Tuesday</mat-label>
+        <input  formControlName="Tuesday" type="text" matInput placeholder="Enter Operation hours">
+      </mat-form-field>
+
+      <mat-form-field appearance="fill" fxFlex="30" fxFlex.sm="49">
+        <mat-label>Wednesday</mat-label>
+        <input  formControlName="Wednesday" type="text" matInput placeholder="Enter Operation hours">
+      </mat-form-field>
+
+      <mat-form-field appearance="fill" fxFlex="30" fxFlex.sm="49">
+        <mat-label>Thursday</mat-label>
+        <input formControlName="Thursday" type="text" matInput placeholder="Enter Operation hours">
+      </mat-form-field>
+
+      <mat-form-field appearance="fill" fxFlex="30" fxFlex.sm="49">
+        <mat-label>Friday</mat-label>
+        <input formControlName="Friday" type="text" matInput placeholder="Enter Operation hours">
+      </mat-form-field>
+
+      <mat-form-field appearance="fill" fxFlex="30" fxFlex.sm="49">
+        <mat-label>Saturday</mat-label>
+        <input formControlName="Saturday" type="text" matInput placeholder="Enter Operation hours">
+      </mat-form-field>
+
+      <mat-form-field appearance="fill" fxFlex="30" fxFlex.sm="49">
+        <mat-label>Sunday</mat-label>
+        <input formControlName="Sunday" type="text" matInput placeholder="Enter Operation hours">
+        <mat-error >Wrong Hours</mat-error>
+        <!--*ngIf="createRestaurantForm.get('operating_hours').('get').hasError('format-operating-hours')"-->
+      </mat-form-field>
+
+    </div>
+
+
+  </div>
+  <button mat-raised-button color="primary" type="submit" (click)="submitForm()"
+   [disabled]="createRestaurantForm.invalid">Submit form</button>
+
+</form>
+
+<!--{{restaurant | json}}-->
+
